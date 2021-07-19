@@ -1,0 +1,21 @@
+-----------------------TEMA 3 IOCLA------------------------------
+
+Pentru rezolvarea acestei teme am implementat functia iocla_atoi,
+care transforma un sir de caractere in numarul respectiv. Pentru
+cazul in care am un numar negativ, retin primul caracter din sirul
+ce trebuie transformat. Daca acesta este '-', vi nega la final
+rezultatul.
+
+Pentru creearea AST-ului mi-am facut propria functie build_tree,
+care primeste un nod. Aceasta functie imi va crea mai intai un nod
+si apoi va aloca memorie si pentru stocarea stringului de caractere.
+ Cum stiu ca numerele si operatorii sunt separati de ' ',
+parcurg sirul ce contine ecuatia in forma poloneza (ce va fi 
+stocat in edi), elimin spatiile si verific daca caracterul pe care
+il intalnesc este un operator (+,*,/) sau cifra. Daca intalnesc un
+'-', exista 2 cazuri: pot avea un numar negativ, sau operatorul 
+minus. Decid astfel unde trebuie sa stochez informatia parsata.
+Daca am un operator, se va apela recursiv functia buil_tree pentru
+stanga si dreapta, iar daca primesc un numar, inseamna ca am ajuns
+la o frunza si doar voi adauga acel numar in sectiunea data a
+nodului la care am ajuns.
